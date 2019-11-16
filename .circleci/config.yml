@@ -20,10 +20,11 @@ jobs:
     working_directory: /go/src/github.com/RahulKandagatla/golang-restful-api-tutorial
     steps:
       - checkout
+      - setup_remote_docker
 
       # specify any bash command here prefixed with `run: `
       - run: go get -v -t -d ./...
       - run:
           name: Build image
           command: |
-            docker image build -t golang-restful-api-tutorial:$CIRCLE_SHA1 .
+            docker build -t golang-restful-api-tutorial:$CIRCLE_SHA1 .
