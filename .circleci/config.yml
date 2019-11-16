@@ -26,4 +26,4 @@ jobs:
       - run:
           name: Build image
           command: |
-            docker build -t golang-restful-api-tutorial:$CIRCLE_SHA1 .
+            docker image build -t golang-restful-api-tutorial:$CIRCLE_SHA1 .
